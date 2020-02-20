@@ -17,7 +17,7 @@ def input_students
     if cohort == ""
       cohort = "default"
     end
-    students << {name: name, height: height, hobby: hobby, cohort: cohort.to_sym}
+    students << {name: name, height: height, hobby: hobby, cohort: cohort}
     puts "Now we have #{students.count} students"
     # get another name from the user
     puts "Enter the next student"
@@ -48,3 +48,21 @@ students = input_students
 print_header
 print(students)
 print_footer(students)
+
+sorted_students = students.group_by{|x| x[:cohort]}
+
+
+#sorted_students = {:cohortname1 => [{:name => name, :height => height}],:cohortname2[{:name => name, :height => height}]} 
+
+def print_sorted(students)
+  sorted_students = students.group_by{|x| x[:cohort]}
+  i = 0
+  while i < sorted_students.size
+    sorted_students.each do |key, value|
+      puts "#{key} #{value[i][:name]}"
+      i += 1
+  end
+end
+end
+
+print_sorted(students)
