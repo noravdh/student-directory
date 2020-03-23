@@ -49,20 +49,20 @@ print_header
 print(students)
 print_footer(students)
 
-sorted_students = students.group_by{|x| x[:cohort]}
+# sorted_students = students.group_by{|x| x[:cohort]}
 
 
-#sorted_students = {:cohortname1 => [{:name => name, :height => height}],:cohortname2[{:name => name, :height => height}]} 
+# #sorted_students = {:cohortname1 => [{:name => name, :height => height}],:cohortname2[{:name => name, :height => height}]} 
 
-def print_sorted(students)
-  sorted_students = students.group_by{|x| x[:cohort]}
-  i = 0
-  while i < sorted_students.size
-    sorted_students.each do |key, value|
-      puts "#{key} #{value[i][:name]}"
-      i += 1
-  end
-end
-end
+# def print_sorted(students)
+#   sorted_students = students.group_by{|x| x[:cohort]}
+#   i = 0
+#   while i < sorted_students.size
+#     sorted_students.each do |key, value|
+#       puts "#{key} #{value[i][:name]}"
+#       i += 1
+#   end
+# end
+# end
 
-print_sorted(students)
+# print_sorted(students)
